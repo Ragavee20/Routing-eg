@@ -4,6 +4,7 @@ import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 import App from './App'
 import Users from './Users'
 import Contact from './Contacts'
+import NotFound from './notFound'
 
 
 const routing = (
@@ -11,7 +12,7 @@ const routing = (
         <div>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link exact to="/">Home</Link>
                 </li>
                 <li>
                     <Link to="/Users">Users</Link>
@@ -24,6 +25,7 @@ const routing = (
                 <Route exact path="/" component={App} />
                 <Route exact path="/Users" component={Users} />
                 <Route path="/contact" component={Contact} />
+                <Route component={NotFound}/>
             </Switch>
         </div>
     </Router>
